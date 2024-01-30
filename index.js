@@ -22,7 +22,7 @@ const data=await UserModel.find()
     res.send("home screen")
 })
 
-app.listen(port,async ()=>{
+app.listen(8080,async ()=>{
     await connection
     console.log(`live on ${port} port` );
 })
