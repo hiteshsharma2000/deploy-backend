@@ -22,7 +22,7 @@ app.get('/', async (req,res)=>{
     res.send("home screen")
 })
 
-app.listen(8080,async ()=>{
+app.listen(port,async ()=>{
     await connection
     console.log(`live on ${port} port` );
 })

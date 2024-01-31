@@ -11,20 +11,18 @@ userRouter.post('/register',async (req,res)=>{
  try {
     bcrypt.hash(password, 5,async function(err, hash) {
        if(err){
-        res.send('someething went wrong in hashing');
+        res.send({"msg":'someething went wrong in hashing'});
 
        }else{
         
        const user= new UserModel({username,email,password:hash})
         await user.save()
-       res.send('new user is register')
+       res.send({"msg":"new user is register"})
        }
     });
  } catch (error) {
-    console.log({"msg":error})
+    console.log({"error":error.message})
  }
-
-
 
 })
 
@@ -40,11 +38,11 @@ userRouter.post('/login',async (req,res)=>{
             // localStorage.setItem("token",token)
             res.send({"msg":"login succesful","token":token})
            }else{
-            res.send("invalid password")
+            res.send({"error":"invalid password"})
            }
         });
       }else{
-         res.send("invalid user")
+         res.send({"error":"invalid user"})
 
       }
 
