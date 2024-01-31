@@ -36,7 +36,7 @@ userRouter.post('/login',async (req,res)=>{
            if(result){
             const token = jwt.sign({userId:user._id ,username:user.username }, 'masai',{expiresIn:"5m"})
             // localStorage.setItem("token",token)
-            res.send({"msg":"login succesful","token":token})
+            res.send({"msg":"login succesful","token":token,"userid":user._id})
            }else{
             res.send({"error":"invalid password"})
            }
