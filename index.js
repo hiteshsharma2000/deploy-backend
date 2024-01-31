@@ -11,9 +11,7 @@ const cors=require('cors')
 
 
 app.use(express.json())
-app.use(cors({
-    origin:"*"
-}))
+app.use(cors())
 
 app.use('/user',userRouter)
 app.use('/note' ,Noterouter)
