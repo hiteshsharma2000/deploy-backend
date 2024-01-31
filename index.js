@@ -12,7 +12,8 @@ const cors=require('cors')
 
 app.use(express.json())
 app.use(cors({
-    origin:"*"
+    origin:"http://localhost:8080:5173/",
+    credentials:true
 }))
 
 app.use('/user',userRouter)
