@@ -18,7 +18,7 @@ app.use(cors({
 app.use('/user',userRouter)
 app.use('/note' ,Noterouter)
 app.get('/', async (req,res)=>{
-const data=await UserModel.find()
+
     res.send("home screen")
 })
 
